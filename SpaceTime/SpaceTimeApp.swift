@@ -12,6 +12,7 @@ struct SpaceTimeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(SpaceClient())
         }
     }
 }

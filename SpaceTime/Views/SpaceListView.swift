@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SpaceListView: View {
+    @EnvironmentObject private var space: SpaceClient
     @State var rows: [SpaceRow]
     var body: some View {
         NavigationView {
@@ -15,8 +16,14 @@ struct SpaceListView: View {
                 Grid {
                     ForEach(rows) { row in
                         NavigationLink {
-                            SpaceView()
+                            SpaceJoinView()
                                 .navigationBarBackButtonHidden()
+                                .onAppear{
+                                    space.joinSpace()
+                                }
+                                .onDisappear {
+                                    space.leave()
+                                }
                         } label: {
                             GridRow {
                                 SpaceItem()
@@ -32,7 +39,7 @@ struct SpaceListView: View {
         }
     }
     
-    init(spaces: Array<Space>) {
+    init(spaces: Array<APISpace>) {
         var idx = 0
         var rows: [SpaceRow] = []
         // There gotta be a better way...

@@ -14,10 +14,34 @@
 		5F6D84F728D52EAE00716C86 /* LocalVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D84F628D52EAE00716C86 /* LocalVideo.swift */; };
 		5F6D84F928D52FE600716C86 /* SpaceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D84F828D52FE600716C86 /* SpaceItem.swift */; };
 		5F6D84FC28D5343B00716C86 /* SpaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D84FB28D5343B00716C86 /* SpaceListView.swift */; };
-		5FB1A72E28D55FFA00560C39 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A72D28D55FFA00560C39 /* Space.swift */; };
+		5FB1A72E28D55FFA00560C39 /* APISpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A72D28D55FFA00560C39 /* APISpace.swift */; };
 		5FB1A73128D5644000560C39 /* SpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A73028D5644000560C39 /* SpaceView.swift */; };
 		5FB1A73328D56C9500560C39 /* SpaceControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A73228D56C9500560C39 /* SpaceControls.swift */; };
+		5FB1A73628D6344600560C39 /* TokenGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A73528D6344600560C39 /* TokenGenerator.swift */; };
+		5FB1A73928D6348300560C39 /* SwiftJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 5FB1A73828D6348300560C39 /* SwiftJWT */; };
+		5FB1A73B28D634D100560C39 /* EnvironmentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A73A28D634D100560C39 /* EnvironmentVariables.swift */; };
+		5FB1A73D28D63FF900560C39 /* SpaceJoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A73C28D63FF900560C39 /* SpaceJoinView.swift */; };
+		5FB1A74328D640DF00560C39 /* MuxSpaces.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A74028D640D200560C39 /* MuxSpaces.xcframework */; };
+		5FB1A74428D640DF00560C39 /* MuxSpaces.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A74028D640D200560C39 /* MuxSpaces.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5FB1A74628D640E000560C39 /* WebRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A73F28D640D100560C39 /* WebRTC.xcframework */; };
+		5FB1A74728D640E000560C39 /* WebRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A73F28D640D100560C39 /* WebRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5FB1A74A28D64B1200560C39 /* SpaceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A74928D64B1200560C39 /* SpaceClient.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5FB1A74528D640DF00560C39 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5FB1A74728D640E000560C39 /* WebRTC.xcframework in Embed Frameworks */,
+				5FB1A74428D640DF00560C39 /* MuxSpaces.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5F6D84E528D52E8900716C86 /* SpaceTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,9 +52,16 @@
 		5F6D84F628D52EAE00716C86 /* LocalVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVideo.swift; sourceTree = "<group>"; };
 		5F6D84F828D52FE600716C86 /* SpaceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceItem.swift; sourceTree = "<group>"; };
 		5F6D84FB28D5343B00716C86 /* SpaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceListView.swift; sourceTree = "<group>"; };
-		5FB1A72D28D55FFA00560C39 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
+		5FB1A72D28D55FFA00560C39 /* APISpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISpace.swift; sourceTree = "<group>"; };
 		5FB1A73028D5644000560C39 /* SpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceView.swift; sourceTree = "<group>"; };
 		5FB1A73228D56C9500560C39 /* SpaceControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceControls.swift; sourceTree = "<group>"; };
+		5FB1A73528D6344600560C39 /* TokenGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenGenerator.swift; sourceTree = "<group>"; };
+		5FB1A73A28D634D100560C39 /* EnvironmentVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariables.swift; sourceTree = "<group>"; };
+		5FB1A73C28D63FF900560C39 /* SpaceJoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceJoinView.swift; sourceTree = "<group>"; };
+		5FB1A73F28D640D100560C39 /* WebRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = WebRTC.xcframework; sourceTree = "<group>"; };
+		5FB1A74028D640D200560C39 /* MuxSpaces.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MuxSpaces.xcframework; sourceTree = "<group>"; };
+		5FB1A74828D6416F00560C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5FB1A74928D64B1200560C39 /* SpaceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +69,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FB1A74328D640DF00560C39 /* MuxSpaces.xcframework in Frameworks */,
+				5FB1A73928D6348300560C39 /* SwiftJWT in Frameworks */,
+				5FB1A74628D640E000560C39 /* WebRTC.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +81,7 @@
 		5F6D84DC28D52E8900716C86 = {
 			isa = PBXGroup;
 			children = (
+				5FB1A73E28D640A800560C39 /* Frameworks */,
 				5F6D84E728D52E8900716C86 /* SpaceTime */,
 				5F6D84E628D52E8900716C86 /* Products */,
 			);
@@ -63,6 +98,8 @@
 		5F6D84E728D52E8900716C86 /* SpaceTime */ = {
 			isa = PBXGroup;
 			children = (
+				5FB1A74828D6416F00560C39 /* Info.plist */,
+				5FB1A73428D6342F00560C39 /* Utils */,
 				5FB1A72F28D5635200560C39 /* Views */,
 				5FB1A72C28D55FE800560C39 /* Models */,
 				5F6D84FA28D5342500716C86 /* Components */,
@@ -94,7 +131,8 @@
 		5FB1A72C28D55FE800560C39 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5FB1A72D28D55FFA00560C39 /* Space.swift */,
+				5FB1A72D28D55FFA00560C39 /* APISpace.swift */,
+				5FB1A74928D64B1200560C39 /* SpaceClient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,8 +143,27 @@
 				5F6D84EA28D52E8900716C86 /* ContentView.swift */,
 				5F6D84FB28D5343B00716C86 /* SpaceListView.swift */,
 				5FB1A73028D5644000560C39 /* SpaceView.swift */,
+				5FB1A73C28D63FF900560C39 /* SpaceJoinView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5FB1A73428D6342F00560C39 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5FB1A73528D6344600560C39 /* TokenGenerator.swift */,
+				5FB1A73A28D634D100560C39 /* EnvironmentVariables.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5FB1A73E28D640A800560C39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FB1A74028D640D200560C39 /* MuxSpaces.xcframework */,
+				5FB1A73F28D640D100560C39 /* WebRTC.xcframework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,12 +176,16 @@
 				5F6D84E128D52E8900716C86 /* Sources */,
 				5F6D84E228D52E8900716C86 /* Frameworks */,
 				5F6D84E328D52E8900716C86 /* Resources */,
+				5FB1A74528D640DF00560C39 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SpaceTime;
+			packageProductDependencies = (
+				5FB1A73828D6348300560C39 /* SwiftJWT */,
+			);
 			productName = SpaceTime;
 			productReference = 5F6D84E528D52E8900716C86 /* SpaceTime.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +214,9 @@
 				Base,
 			);
 			mainGroup = 5F6D84DC28D52E8900716C86;
+			packageReferences = (
+				5FB1A73728D6348300560C39 /* XCRemoteSwiftPackageReference "Swift-JWT" */,
+			);
 			productRefGroup = 5F6D84E628D52E8900716C86 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -181,11 +245,15 @@
 			files = (
 				5FB1A73128D5644000560C39 /* SpaceView.swift in Sources */,
 				5F6D84FC28D5343B00716C86 /* SpaceListView.swift in Sources */,
+				5FB1A74A28D64B1200560C39 /* SpaceClient.swift in Sources */,
 				5F6D84EB28D52E8900716C86 /* ContentView.swift in Sources */,
-				5FB1A72E28D55FFA00560C39 /* Space.swift in Sources */,
+				5FB1A73B28D634D100560C39 /* EnvironmentVariables.swift in Sources */,
+				5FB1A73D28D63FF900560C39 /* SpaceJoinView.swift in Sources */,
+				5FB1A72E28D55FFA00560C39 /* APISpace.swift in Sources */,
 				5F6D84F928D52FE600716C86 /* SpaceItem.swift in Sources */,
 				5F6D84E928D52E8900716C86 /* SpaceTimeApp.swift in Sources */,
 				5FB1A73328D56C9500560C39 /* SpaceControls.swift in Sources */,
+				5FB1A73628D6344600560C39 /* TokenGenerator.swift in Sources */,
 				5F6D84F728D52EAE00716C86 /* LocalVideo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,11 +386,12 @@
 				DEVELOPMENT_TEAM = G8R2CB3JGD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = SpaceTime/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,11 +416,12 @@
 				DEVELOPMENT_TEAM = G8R2CB3JGD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = SpaceTime/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,6 +457,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5FB1A73728D6348300560C39 /* XCRemoteSwiftPackageReference "Swift-JWT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/Swift-JWT.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5FB1A73828D6348300560C39 /* SwiftJWT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FB1A73728D6348300560C39 /* XCRemoteSwiftPackageReference "Swift-JWT" */;
+			productName = SwiftJWT;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5F6D84DD28D52E8900716C86 /* Project object */;
 }
