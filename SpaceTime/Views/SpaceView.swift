@@ -7,14 +7,17 @@
 
 import SwiftUI
 
+//TODO: fix UI bug between local video and controls
 struct SpaceView: View {
     @State var showControls = false
+    
     var tap: some Gesture {
         TapGesture(count: 1)
             .onEnded{
                 toggleControls()
             }
     }
+    
     var body: some View {
         ZStack {
             LocalVideo()
@@ -27,6 +30,9 @@ struct SpaceView: View {
         }
         .contentShape(Rectangle())
         .gesture(self.tap)
+    }
+    
+    init() {
     }
     
     func toggleControls() {

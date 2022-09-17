@@ -8,18 +8,18 @@
 import Foundation
 
 let spaceList = [
-    Space(name: "test1"),
-    Space(name: "test2"),
-    Space(name: "test3"),
-    Space(name: "test4"),
-    Space(name: "test5"),
-    Space(name: "test5"),
-    Space(name: "test5"),
-    Space(name: "test5"),
-    Space(name: "test5"),
+    APISpace(name: "test1"),
+    APISpace(name: "test2"),
+    APISpace(name: "test3"),
+    APISpace(name: "test4"),
+    APISpace(name: "test5"),
+    APISpace(name: "test5"),
+    APISpace(name: "test5"),
+    APISpace(name: "test5"),
+    APISpace(name: "test5"),
 ]
 
-struct Space: Codable {
+struct APISpace: Codable {
     var name: String
     var id: String
     
@@ -31,10 +31,10 @@ struct Space: Codable {
 
 struct SpaceRow: Identifiable {
     let id = UUID()
-    var left: Space
-    var right: Space?
+    var left: APISpace
+    var right: APISpace?
     
-    init(left: Space, right: Space? = nil) {
+    init(left: APISpace, right: APISpace? = nil) {
         self.left = left
         self.right = right
     }
