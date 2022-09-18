@@ -82,5 +82,8 @@ struct SpaceControls: View {
 struct SpaceControls_Previews: PreviewProvider {
     static var previews: some View {
         SpaceControls()
+            .background(
+                Image("starfield-bg")
+            )
     }
 }

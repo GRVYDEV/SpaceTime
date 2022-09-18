@@ -24,7 +24,9 @@ struct SpaceView: View {
             if let participant = space.remoteParticipants.first {
                 RemoteVideo(space: space.space!, participant: participant)
             }
-            LocalVideo(space: space.space!, localParticipant: space.localParticipant!)
+            if let part = space.localParticipant {
+                LocalVideo(space: space.space!, localParticipant: part)
+            }
             if self.showControls {
                 VStack{
                     SpaceControls()
@@ -34,10 +36,6 @@ struct SpaceView: View {
         }
         .contentShape(Rectangle())
         .gesture(self.tap)
-        .background(
-            Image("starfield-bg")
-                .ignoresSafeArea()
-        )
     }
     
     init() {
@@ -49,8 +47,9 @@ struct SpaceView: View {
     }
 }
 
-//struct SpaceView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SpaceView()
-//    }
-//}
+struct SpaceView_Previews: PreviewProvider {
+    static var previews: some View {
+        SpaceView()
+            .environmentObject(SpaceClient(mock:true))
+    }
+}

@@ -25,9 +25,9 @@
 		5FB1A74728D640E000560C39 /* WebRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A73F28D640D100560C39 /* WebRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FB1A74A28D64B1200560C39 /* SpaceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A74928D64B1200560C39 /* SpaceClient.swift */; };
 		5FB1A75028D6647800560C39 /* SpacesVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A74F28D6647800560C39 /* SpacesVideo.swift */; };
-		5FB1A75328D6694700560C39 /* MuxSpaces.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A75128D6694200560C39 /* MuxSpaces.xcframework */; };
-		5FB1A75428D6694700560C39 /* MuxSpaces.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A75128D6694200560C39 /* MuxSpaces.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FB1A75628D6A5F400560C39 /* RemoteVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A75528D6A5F400560C39 /* RemoteVideo.swift */; };
+		5FB1A76128D6C49800560C39 /* MuxSpaces.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A75F28D6C49500560C39 /* MuxSpaces.xcframework */; };
+		5FB1A76228D6C49800560C39 /* MuxSpaces.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A75F28D6C49500560C39 /* MuxSpaces.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,7 +38,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5FB1A74728D640E000560C39 /* WebRTC.xcframework in Embed Frameworks */,
-				5FB1A75428D6694700560C39 /* MuxSpaces.xcframework in Embed Frameworks */,
+				5FB1A76228D6C49800560C39 /* MuxSpaces.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,8 +64,8 @@
 		5FB1A74828D6416F00560C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5FB1A74928D64B1200560C39 /* SpaceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceClient.swift; sourceTree = "<group>"; };
 		5FB1A74F28D6647800560C39 /* SpacesVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacesVideo.swift; sourceTree = "<group>"; };
-		5FB1A75128D6694200560C39 /* MuxSpaces.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MuxSpaces.xcframework; sourceTree = "<group>"; };
 		5FB1A75528D6A5F400560C39 /* RemoteVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteVideo.swift; sourceTree = "<group>"; };
+		5FB1A75F28D6C49500560C39 /* MuxSpaces.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MuxSpaces.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FB1A75328D6694700560C39 /* MuxSpaces.xcframework in Frameworks */,
+				5FB1A76128D6C49800560C39 /* MuxSpaces.xcframework in Frameworks */,
 				5FB1A73928D6348300560C39 /* SwiftJWT in Frameworks */,
 				5FB1A74628D640E000560C39 /* WebRTC.xcframework in Frameworks */,
 			);
@@ -166,7 +166,7 @@
 		5FB1A73E28D640A800560C39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5FB1A75128D6694200560C39 /* MuxSpaces.xcframework */,
+				5FB1A75F28D6C49500560C39 /* MuxSpaces.xcframework */,
 				5FB1A73F28D640D100560C39 /* WebRTC.xcframework */,
 			);
 			path = Frameworks;

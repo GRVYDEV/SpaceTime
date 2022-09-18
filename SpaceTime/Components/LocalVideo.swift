@@ -80,7 +80,7 @@ struct LocalVideo: View {
                 .shadow(radius: 8)
         } else {
             RoundedRectangle(cornerRadius: 8)
-                .fill(Color.blue)
+                .fill(Color.pink.gradient)
                 .frame(width: localWidth, height: localHeight)
                 .position(x: self.x, y: self.y)
                 .gesture(drag)
@@ -88,7 +88,6 @@ struct LocalVideo: View {
                 .animation(.spring(), value: y)
                 .shadow(radius: 8)
         }
-        
     }
     
     func computePosition() {
@@ -186,8 +185,12 @@ struct LocalVideo: View {
     }
 }
 
-//struct LocalVideo_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LocalVideo().border(.red)
-//    }
-//}
+struct LocalVideo_Previews: PreviewProvider {
+    static var client = SpaceClient(mock: true)
+    static var previews: some View {
+        LocalVideo(space: client.space!, localParticipant: client.localParticipant!)
+            .background(
+                Image("starfield-bg")
+            )
+    }
+}

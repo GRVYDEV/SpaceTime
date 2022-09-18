@@ -24,6 +24,10 @@ struct SpaceListView: View {
                                 .onDisappear {
                                     space.leave()
                                 }
+                                .background(
+                                    Image("starfield-bg")
+                                        .ignoresSafeArea()
+                                )
                         } label: {
                             GridRow {
                                 SpaceItem()
