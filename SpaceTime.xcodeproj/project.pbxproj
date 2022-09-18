@@ -21,11 +21,13 @@
 		5FB1A73928D6348300560C39 /* SwiftJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 5FB1A73828D6348300560C39 /* SwiftJWT */; };
 		5FB1A73B28D634D100560C39 /* EnvironmentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A73A28D634D100560C39 /* EnvironmentVariables.swift */; };
 		5FB1A73D28D63FF900560C39 /* SpaceJoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A73C28D63FF900560C39 /* SpaceJoinView.swift */; };
-		5FB1A74328D640DF00560C39 /* MuxSpaces.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A74028D640D200560C39 /* MuxSpaces.xcframework */; };
-		5FB1A74428D640DF00560C39 /* MuxSpaces.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A74028D640D200560C39 /* MuxSpaces.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FB1A74628D640E000560C39 /* WebRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A73F28D640D100560C39 /* WebRTC.xcframework */; };
 		5FB1A74728D640E000560C39 /* WebRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A73F28D640D100560C39 /* WebRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FB1A74A28D64B1200560C39 /* SpaceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A74928D64B1200560C39 /* SpaceClient.swift */; };
+		5FB1A75028D6647800560C39 /* SpacesVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A74F28D6647800560C39 /* SpacesVideo.swift */; };
+		5FB1A75328D6694700560C39 /* MuxSpaces.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A75128D6694200560C39 /* MuxSpaces.xcframework */; };
+		5FB1A75428D6694700560C39 /* MuxSpaces.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB1A75128D6694200560C39 /* MuxSpaces.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5FB1A75628D6A5F400560C39 /* RemoteVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1A75528D6A5F400560C39 /* RemoteVideo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,7 +38,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5FB1A74728D640E000560C39 /* WebRTC.xcframework in Embed Frameworks */,
-				5FB1A74428D640DF00560C39 /* MuxSpaces.xcframework in Embed Frameworks */,
+				5FB1A75428D6694700560C39 /* MuxSpaces.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,9 +61,11 @@
 		5FB1A73A28D634D100560C39 /* EnvironmentVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariables.swift; sourceTree = "<group>"; };
 		5FB1A73C28D63FF900560C39 /* SpaceJoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceJoinView.swift; sourceTree = "<group>"; };
 		5FB1A73F28D640D100560C39 /* WebRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = WebRTC.xcframework; sourceTree = "<group>"; };
-		5FB1A74028D640D200560C39 /* MuxSpaces.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MuxSpaces.xcframework; sourceTree = "<group>"; };
 		5FB1A74828D6416F00560C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5FB1A74928D64B1200560C39 /* SpaceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceClient.swift; sourceTree = "<group>"; };
+		5FB1A74F28D6647800560C39 /* SpacesVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacesVideo.swift; sourceTree = "<group>"; };
+		5FB1A75128D6694200560C39 /* MuxSpaces.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MuxSpaces.xcframework; sourceTree = "<group>"; };
+		5FB1A75528D6A5F400560C39 /* RemoteVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteVideo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FB1A74328D640DF00560C39 /* MuxSpaces.xcframework in Frameworks */,
+				5FB1A75328D6694700560C39 /* MuxSpaces.xcframework in Frameworks */,
 				5FB1A73928D6348300560C39 /* SwiftJWT in Frameworks */,
 				5FB1A74628D640E000560C39 /* WebRTC.xcframework in Frameworks */,
 			);
@@ -124,6 +128,8 @@
 				5F6D84F828D52FE600716C86 /* SpaceItem.swift */,
 				5F6D84F628D52EAE00716C86 /* LocalVideo.swift */,
 				5FB1A73228D56C9500560C39 /* SpaceControls.swift */,
+				5FB1A74F28D6647800560C39 /* SpacesVideo.swift */,
+				5FB1A75528D6A5F400560C39 /* RemoteVideo.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -160,7 +166,7 @@
 		5FB1A73E28D640A800560C39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5FB1A74028D640D200560C39 /* MuxSpaces.xcframework */,
+				5FB1A75128D6694200560C39 /* MuxSpaces.xcframework */,
 				5FB1A73F28D640D100560C39 /* WebRTC.xcframework */,
 			);
 			path = Frameworks;
@@ -247,10 +253,12 @@
 				5F6D84FC28D5343B00716C86 /* SpaceListView.swift in Sources */,
 				5FB1A74A28D64B1200560C39 /* SpaceClient.swift in Sources */,
 				5F6D84EB28D52E8900716C86 /* ContentView.swift in Sources */,
+				5FB1A75028D6647800560C39 /* SpacesVideo.swift in Sources */,
 				5FB1A73B28D634D100560C39 /* EnvironmentVariables.swift in Sources */,
 				5FB1A73D28D63FF900560C39 /* SpaceJoinView.swift in Sources */,
 				5FB1A72E28D55FFA00560C39 /* APISpace.swift in Sources */,
 				5F6D84F928D52FE600716C86 /* SpaceItem.swift in Sources */,
+				5FB1A75628D6A5F400560C39 /* RemoteVideo.swift in Sources */,
 				5F6D84E928D52E8900716C86 /* SpaceTimeApp.swift in Sources */,
 				5FB1A73328D56C9500560C39 /* SpaceControls.swift in Sources */,
 				5FB1A73628D6344600560C39 /* TokenGenerator.swift in Sources */,

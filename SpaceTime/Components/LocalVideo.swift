@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MuxSpaces
 
 let boundX = UIScreen.main.bounds.width
 let boundY = UIScreen.main.bounds.height
@@ -45,12 +46,14 @@ struct VideoPos: Equatable {
 }
 
 struct LocalVideo: View {
+    @State var space: Space
+    @State var localParticipant: Participant
     @State var isDragging = false
     @State var offset: CGSize = CGSize.zero
     @State var color: Color = Color.blue
-    @State var x: Double
-    @State var y: Double
-    @State var position: VideoPosition
+    @State var position: VideoPosition = .bottomRight
+    @State var x: Double = VideoPosition.bottomRight.x.value
+    @State var y: Double = VideoPosition.bottomRight.y.value
     
     var drag: some Gesture {
         DragGesture()
@@ -65,21 +68,27 @@ struct LocalVideo: View {
             }
     }
     var body: some View {
-        RoundedRectangle(cornerRadius: CGFloat(8))
-            .fill(self.color)
-            .frame(width: localWidth, height: localHeight)
-            .position(x: self.x, y: self.y)
-            .gesture(drag)
-            .animation(.spring(), value: x)
-            .animation(.spring(), value: y)
-            .shadow(radius: 8)
+        if let track = localParticipant.videoTracks.values.first {
+            SpacesVideo(space: space, track: track)
+                .frame(width: localWidth, height: localHeight)
+                .background(Color.red)
+                .cornerRadius(8)
+                .position(x: self.x, y: self.y)
+                .gesture(drag)
+                .animation(.spring(), value: x)
+                .animation(.spring(), value: y)
+                .shadow(radius: 8)
+        } else {
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.blue)
+                .frame(width: localWidth, height: localHeight)
+                .position(x: self.x, y: self.y)
+                .gesture(drag)
+                .animation(.spring(), value: x)
+                .animation(.spring(), value: y)
+                .shadow(radius: 8)
+        }
         
-    }
-    
-    init(initialPos: VideoPosition = .bottomRight) {
-        self.position = initialPos
-        self.x = initialPos.x.value
-        self.y = initialPos.y.value
     }
     
     func computePosition() {
@@ -177,8 +186,8 @@ struct LocalVideo: View {
     }
 }
 
-struct LocalVideo_Previews: PreviewProvider {
-    static var previews: some View {
-        LocalVideo().border(.red)
-    }
-}
+//struct LocalVideo_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LocalVideo().border(.red)
+//    }
+//}
