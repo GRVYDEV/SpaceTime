@@ -22,5 +22,6 @@ struct SpaceJoinView: View {
 struct SpaceJoinView_Previews: PreviewProvider {
     static var previews: some View {
         SpaceJoinView()
+            .environmentObject(SpaceClient(mock:true))
     }
 }

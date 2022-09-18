@@ -25,15 +25,19 @@ struct RemoteVideo: View {
                 .shadow(radius: 8)
         } else {
             RoundedRectangle(cornerRadius: 8)
-                .fill(Color.blue)
+                .fill(Color.pink.gradient)
                 .frame(width: width, height: height)
                 .shadow(radius: 8)
         }
     }
 }
 
-//struct RemoteVideo_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RemoteVideo()
-//    }
-//}
+struct RemoteVideo_Previews: PreviewProvider {
+    static var client = SpaceClient(mock: true)
+    static var previews: some View {
+        RemoteVideo(space: client.space!, participant: client.remoteParticipants.first!)
+            .background(
+                Image("starfield-bg")
+            )
+    }
+}

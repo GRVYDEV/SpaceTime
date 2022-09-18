@@ -27,10 +27,8 @@ class SpaceClient: ObservableObject {
     
     var cancellables: Set<AnyCancellable> = []
     
-    var localView: SpacesVideo?
-    
     // TODO: Take space id and username
-    init() {
+    init(mock: Bool = false) {
         var token: String?
         do {
             token = try TokenGenerator.generate(displayName: "Garrett")
@@ -45,7 +43,15 @@ class SpaceClient: ObservableObject {
         }
         // JOIN SPACE
         print(token)
-        self.space = Space(token: token)
+        if mock {
+            let space = Space.NewMock(mockParticipants: 1)
+            print(space)
+            self.localParticipant = space.localParticipant
+            self.remoteParticipants = space.remoteParticipants
+            self.space = space
+        } else {
+            self.space = Space(token: token)
+        }
     }
     
     deinit {
@@ -157,8 +163,25 @@ class SpaceClient: ObservableObject {
         
         space.leave()
         self.joined = false
+        self.localParticipant = nil
+        self.remoteParticipants = []
         cancellables.forEach { $0.cancel() }
         print("left space")
+        var token: String?
+        do {
+            token = try TokenGenerator.generate(displayName: "Garrett")
+        } catch {
+            token = nil
+        }
+        
+        guard let token = token else {
+            self.error = "Invalid Token"
+            print("token error")
+            return
+        }
+        // JOIN SPACE
+        print(token)
+        self.space = Space(token: token)
     }
     
     func publishAudio() {
@@ -192,28 +215,5 @@ class SpaceClient: ObservableObject {
                 return
             }
         }
-    }
-    
-    func getLocalVideoView() throws -> SpacesVideo {
-        if let view = self.localView {
-            return view
-        }
-        guard let space = self.space else {
-            print("no space")
-            throw LocalVideoError.noSpace
-        }
-        
-        guard let lp = space.localParticipant else {
-            print("no lp")
-            throw LocalVideoError.noLocalPart
-        }
-        
-        guard let video = lp.videoTracks.values.first else {
-            print("no video")
-            throw LocalVideoError.noVideo
-        }
-        let view = SpacesVideo(space: space, track: video)
-        self.localView = view
-        return view
     }
 }
