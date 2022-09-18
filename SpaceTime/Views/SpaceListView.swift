@@ -59,5 +59,8 @@ struct SpaceListView: View {
 struct SpaceListView_Previews: PreviewProvider {
     static var previews: some View {
         SpaceListView(spaces: spaceList)
+            .background(
+                Image("starfield-bg")
+            )
     }
 }

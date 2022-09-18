@@ -11,7 +11,7 @@ import MuxSpaces
 struct SpaceJoinView: View {
     @EnvironmentObject private var space: SpaceClient
     var body: some View {
-        if space.joined {
+        if space.localParticipant != nil {
             SpaceView()
         } else {
             Text("Loading...")

@@ -9,6 +9,7 @@ import SwiftUI
 
 //TODO: fix UI bug between local video and controls
 struct SpaceView: View {
+    @EnvironmentObject private var space: SpaceClient
     @State var showControls = false
     
     var tap: some Gesture {
@@ -20,7 +21,10 @@ struct SpaceView: View {
     
     var body: some View {
         ZStack {
-            LocalVideo()
+            if let participant = space.remoteParticipants.first {
+                RemoteVideo(space: space.space!, participant: participant)
+            }
+            LocalVideo(space: space.space!, localParticipant: space.localParticipant!)
             if self.showControls {
                 VStack{
                     SpaceControls()
@@ -30,6 +34,10 @@ struct SpaceView: View {
         }
         .contentShape(Rectangle())
         .gesture(self.tap)
+        .background(
+            Image("starfield-bg")
+                .ignoresSafeArea()
+        )
     }
     
     init() {
@@ -41,8 +49,8 @@ struct SpaceView: View {
     }
 }
 
-struct SpaceView_Previews: PreviewProvider {
-    static var previews: some View {
-        SpaceView()
-    }
-}
+//struct SpaceView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SpaceView()
+//    }
+//}

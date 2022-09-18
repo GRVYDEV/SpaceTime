@@ -74,6 +74,7 @@ struct SpaceControls: View {
                 }
             }
             .padding()
+            .frame(width: UIScreen.main.bounds.width)
             .background(LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.2), Color.black.opacity(0)]), startPoint: .top, endPoint: .bottom))
     }
 }
