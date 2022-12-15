@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import MuxSpaces
 
 let circleSize = CGFloat(55)
 
 struct SpaceControls: View {
     @Environment(\.dismiss) private var dismiss
+    @State var spaceClient: SpaceClient
     
     var body: some View {
             VStack(alignment: .leading){
@@ -35,7 +37,7 @@ struct SpaceControls: View {
                 .foregroundColor(Color.white)
                 .padding(.bottom)
                 HStack(spacing: 50) {
-                    Button(action: {dismiss()}) {
+                    Button(action: {spaceClient.toggleCameraMute()}) {
                         ZStack {
                             Circle()
                                 .fill(Color.gray)
@@ -44,7 +46,7 @@ struct SpaceControls: View {
                                 .foregroundColor(Color.white)
                         }
                     }
-                    Button(action: {dismiss()}) {
+                    Button(action: {spaceClient.toggleMicMute()}) {
                         ZStack {
                             Circle()
                                 .fill(Color.gray)
@@ -80,8 +82,9 @@ struct SpaceControls: View {
 }
 
 struct SpaceControls_Previews: PreviewProvider {
+    static var client = SpaceClient(mock: true)
     static var previews: some View {
-        SpaceControls()
+        SpaceControls(spaceClient: client)
             .background(
                 Image("starfield-bg")
             )

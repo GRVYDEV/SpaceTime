@@ -48,6 +48,7 @@ struct VideoPos: Equatable {
 struct LocalVideo: View {
     @State var space: Space
     @State var localParticipant: Participant
+    @ObservedObject var client: SpaceClient
     @State var isDragging = false
     @State var offset: CGSize = CGSize.zero
     @State var color: Color = Color.blue
@@ -68,8 +69,9 @@ struct LocalVideo: View {
             }
     }
     var body: some View {
-        if let track = localParticipant.videoTracks.values.first {
-            SpacesVideo(space: space, track: track)
+        let _ = print("LocalVideo \(localParticipant.videoTracks.values)")
+        if let track = client.localParticipant!.videoTracks.values.first {
+            SpacesVideo(space: client.space!, track: track)
                 .frame(width: localWidth, height: localHeight)
                 .background(Color.red)
                 .cornerRadius(8)
@@ -188,7 +190,7 @@ struct LocalVideo: View {
 struct LocalVideo_Previews: PreviewProvider {
     static var client = SpaceClient(mock: true)
     static var previews: some View {
-        LocalVideo(space: client.space!, localParticipant: client.localParticipant!)
+        LocalVideo(space: client.space!, localParticipant: client.localParticipant!, client: client)
             .background(
                 Image("starfield-bg")
             )

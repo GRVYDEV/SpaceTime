@@ -21,16 +21,16 @@ struct SpaceView: View {
     
     var body: some View {
         ZStack {
-            if let participant = space.remoteParticipants.first {
+            if let participant = space.remoteParticipants.filter{!$0.isLocal}.first {
                 RemoteVideo(space: space.space!, participant: participant)
             }
             if let part = space.localParticipant {
-                LocalVideo(space: space.space!, localParticipant: part)
+                LocalVideo(space: space.space!, localParticipant: part, client: space)
             }
             if self.showControls {
                 VStack{
-                    SpaceControls()
-                    Spacer()
+                        SpaceControls(spaceClient: space)
+                        Spacer()
                 }
             }
         }
@@ -51,5 +51,9 @@ struct SpaceView_Previews: PreviewProvider {
     static var previews: some View {
         SpaceView()
             .environmentObject(SpaceClient(mock:true))
+            .background(
+                Image("starfield-bg")
+                    .ignoresSafeArea()
+            )
     }
 }

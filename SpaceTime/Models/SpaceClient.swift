@@ -24,6 +24,14 @@ class SpaceClient: ObservableObject {
     @Published var error: String?
     @Published var localParticipant: Participant?
     @Published var remoteParticipants: [Participant] = []
+    var simulator: Bool {
+        #if targetEnvironment(simulator)
+            return true
+        #else
+            // your real device code
+            return false
+        #endif
+    }
     
     var cancellables: Set<AnyCancellable> = []
     
@@ -42,6 +50,7 @@ class SpaceClient: ObservableObject {
             return
         }
         // JOIN SPACE
+        print("isSim \(self.simulator)")
         print(token)
         if mock {
             let space = Space.NewMock(mockParticipants: 1)
@@ -138,10 +147,11 @@ class SpaceClient: ObservableObject {
         if let space = self.space {
             space.join{ (result:Result<Participant, Space.JoinError>) in
                 switch result {
-                case .success(_):
+                case .success(let participant):
                     print("joined")
                     self.joined = true
                     self.remoteParticipants = space.remoteParticipants
+                    self.localParticipant = participant
                     self.setupHandlers()
                     self.publishAudio()
                     self.publishVideo()
@@ -185,6 +195,7 @@ class SpaceClient: ObservableObject {
     }
     
     func publishAudio() {
+        guard !self.simulator else { return }
         guard let space = self.space else {
             print("no space")
             return
@@ -202,6 +213,7 @@ class SpaceClient: ObservableObject {
     }
     
     func publishVideo() {
+        guard !self.simulator else { return }
         guard let space = self.space else {
             print("no space")
             return
@@ -213,6 +225,38 @@ class SpaceClient: ObservableObject {
             guard error == nil else {
                 print("Video capture error: \(error)")
                 return
+            }
+        }
+    }
+    
+    func toggleCameraMute() {
+        guard let localParticipant = self.localParticipant, let space = self.space else {
+            return
+        }
+        
+        // TODO: Update logic to look for camera track
+        if let track = localParticipant.videoTracks.values.first{
+            print("cam toggle")
+            if track.isMuted {
+                space.unmuteTrack(track)
+            } else {
+                space.muteTrack(track)
+            }
+        }
+    }
+    
+    func toggleMicMute() {
+        guard let localParticipant = self.localParticipant, let space = self.space else {
+            return
+        }
+        
+        // TODO: Update logic to look for camera track
+        if let track = localParticipant.audioTracks.values.first{
+            print("mic toggle")
+            if track.isMuted {
+                space.unmuteTrack(track)
+            } else {
+                space.muteTrack(track)
             }
         }
     }
