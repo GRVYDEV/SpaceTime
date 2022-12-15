@@ -17,7 +17,7 @@ struct RemoteVideo: View {
         width * 0.5625
     }
     var body: some View {
-        let _ = print(participant.id)
+        let _ = print("RemoteVideo \(participant.videoTracks.values)")
         if let track = participant.videoTracks.values.first {
             SpacesVideo(space: space, track: track)
                 .cornerRadius(8)
